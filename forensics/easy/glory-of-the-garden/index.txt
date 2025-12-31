@@ -1,0 +1,8 @@
+dalam soal kali ini kita menemukan sebuah file
+dan file ini gambar
+kita check dengan strings dan yap itu muncul sebuah flag 
+untuk lebih rapinya saya menggunakan grep
+
+strings garden.jpg | grep "picoCTF"
+
+dan ya itulah flagnya
