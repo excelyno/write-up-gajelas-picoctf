@@ -1,0 +1,24 @@
+pada file kali ini sama kita diberi sebuah disk
+disk ini kita check terlebih dahulu
+file disko-3.dd
+
+hasil menunjukan image menggunakan file fat 32
+telrihat dibuat dengan mkfs fat
+dan ini brarti struktur direktory sederhana dan raw recovery sangat dimungkinkan
+
+lalu kita baca file systemnya
+fls -r disko-3.dd
+
+output memperlihatkan banyak log dan beberapa file 
+tpi kita menemukan entri penting yaitu
+flag.gz dan _essage yaitu file yang terhapus
+
+nahh disini kita bisa langsung saja ekstrak flag
+
+icat disko-3.dd inode > flag.gz
+
+file flag.gz
+
+dan kita gzip -d flag.gz
+
+lalu kita bisa menemukan filenya
