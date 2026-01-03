@@ -1,0 +1,3 @@
+ya tinggal di strings terus gunakan grep untuk mendapatkan keyword tertentu
+dan karena ini txt jadi ya pasti ad di text nya . jadi langusng percobaan pertama gunakan keyword pico
+dan ya ketemu
