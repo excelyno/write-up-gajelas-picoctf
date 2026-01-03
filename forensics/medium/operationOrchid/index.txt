@@ -1,0 +1,19 @@
+dalam tugas kali ini saya menemukan sebuah file img disk
+dn didalamnya kita mencari sebuah flag 
+
+ketika saya mmls kita menemukan ada 2 partisi
+dan dilanjutkan ketika saya fls ke partisi terakhir
+sya menemukan sebuah flag.txt.enc
+
+dan ketika di ekstrask outputnya memunculkan signature atau sudh terenkripsi lah anggepnya
+
+ya emang ke enkripsi
+
+jadi kita mencari file flag mana sebelumnya yang belum terenkripsi atau setidaknya suatu related antara flag dengan yang lain
+strings -t d disk.flag.img | grep flag.txt
+
+kalo males sih ya tinggal strings terus gunakan grep untuk mencari related dengan flag.txt
+
+dilanjutkan kita menemukan sebuah perintah atau openssl untuk enkripsi dan diakhir nya ada sebuah key ubreakble key kalo ga salah
+dan bisa digunakan u tuk melakukan decrypt
+sekitan 
