@@ -1,0 +1,6 @@
+dalam soal kali ini kita diberikan sebuah file pdf
+nah kita file untuk check filenya itu apa formatnya
+dan ternyata meskipun disini adalah .pdf
+format filenya adalah png
+oleh karena itu kita buat menjadi png dan part 1 terdapat dan
+part 2 ternyata ada di pdf scroll kebawah aja

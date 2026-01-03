@@ -1,0 +1,34 @@
+dalam chall kali ini kita diberi sebuah chall yang memberi kita sebuah file disk 
+disk ini dalam disko-2.dd
+dalam hal ini kita baca deskripsi terlebih dahulu yang menjelaskan bahwa flag utama berada di linux
+jadi kita check terlebih dahulu partisi dari file ini
+
+mmls : 
+mmls disko-2.dd
+DOS Partition Table
+Offset Sector: 0
+Units are in 512-byte sectors
+
+      Slot      Start        End          Length       Description
+000:  Meta      0000000000   0000000000   0000000001   Primary Table (#0)
+001:  -------   0000000000   0000002047   0000002048   Unallocated
+002:  000:000   0000002048   0000053247   0000051200   Linux (0x83)
+003:  000:001   0000053248   0000118783   0000065536   Win95 FAT32 (0x0b)
+004:  -------   0000118784   0000204799   0000086016   Unallocate
+
+dalam hal ini kita menemukan bahwa ada linux dan win9
+target kita adalah linux dan kita langsung saja extrak partisi ini
+
+dd if=disko-2.dd of=part1.img bs=512 skip=2048 count=51200
+
+penjelasannya
+if = input file jadi kita gunakan file yang diberikan
+of = output file jadi output filenya mau dibilang atau dipanggil apa
+bs = block size 512 byte (satu sector)
+skip = lewati 2048 blok pertama karena partisi dimulai dari 2048
+count = salin 51200 yaitu salin 51200 sepanjang partisi linux
+dan akhirnya kita mendapatkan partisi linux 
+
+dan kita dapat gunakan
+strings part1.img | grep ("picoCTF")
+dan flag akan muncul 

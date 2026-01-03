@@ -1,0 +1,39 @@
+objective kali ini adalah menemukan 3 bagian flag yang tersembunti dalam file log
+
+mengapa kita menggunakan parsing evtx bukan langsung membuka manual di event viewer?
+dikarenakan itu akan lambat dan sulit jika melakukan pencarian massal
+dan rawfields sering tersembunyi di xml
+
+tools adalah python-evtx
+ya anggep aja ini sebagai standar library
+
+rasionalisai kenapa bisa diubah dan harus json? dikaernakan json mudah dibaca dan mudah mencari pola, base64 dan event tertentu
+
+bisa membuat script dari python secara sederhana
+
+import Evtx.Evtx as evtx
+import json
+
+records = []
+with evtx.Evtx("Windows_Logs.evtx") as log:
+    for r in log.records():
+        records.append(r.lxml())
+
+with open("logs.json", "w") as f:
+    json.dump(records, f, indent=2)
+
+
+dan outputnya akan menjadi logs.json
+
+dan dari keterangan. kita akan mencari dari event id
+kenapa? karena logs windows itu tidaklah acak. setiap aktivitasnya memiliki id spesifik
+
+install = 1033
+installlation complete = 11707
+shutdown (usr/process) = 1074
+dan service stio (shutdown) = 6006
+
+kita mencari flag pertama dengan event id 1033 (installer)
+dan kita menemukan base64 code yang didecode akan menjadi flag 1
+
+dilanjutkan mencari flag kedua 

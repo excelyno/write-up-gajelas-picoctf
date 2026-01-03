@@ -1,0 +1,4 @@
+dalam soal ini kita diberi sebuah file pcap
+kita gunakan aja strings untuk analisis dan gunakan | grep "pico" 
+dan ya muncullah flagnya
+

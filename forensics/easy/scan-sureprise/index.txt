@@ -1,0 +1,6 @@
+dalam challenge kali ini ada sebuah file dan unzip lalu kita masuk ke home dan terus masuk hingga menemukan flag.txt
+pada awalnya saya strings dan tidak muncul apa apa 
+hingga saya buka explorer untuk akses gambar secara langsung dan ternyata ada sebuah qr code
+ketika saya scan menemukan codenya
+uddh itu aja
+
