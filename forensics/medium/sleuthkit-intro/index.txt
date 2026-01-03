@@ -1,0 +1,5 @@
+dalam soal kali ini kita hany perlu membca partisi linux dari sebuah img
+kita bisa check denga cara kita menggunakan mmls 
+jadi nanti akan muncul partisi dari img nya
+dan nc ke server dan masukkan saja lengh dari partisinya
+
