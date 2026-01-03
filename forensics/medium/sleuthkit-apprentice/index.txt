@@ -1,0 +1,5 @@
+dalam tugas kali ini kita diberi sebuah disk img yang didalamnya ad beberapa partisi
+kita bisa check partisi partisinya dengan menggunakan fls 
+dan kita bisa grep flag 
+dan kita mendapatkan inode
+terus kita lanjutkan dengan exktrak dengan icat inode itu 
