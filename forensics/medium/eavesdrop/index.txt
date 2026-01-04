@@ -1,0 +1,4 @@
+dalam file pcap ada percakapan yang awalnya ada di port 9001 
+dipercakapan itu lanjut ke port 9002 tempat file dikirim
+lajut kita diberi sebuah file yang telah di encript jdi kita dapatkan dengan raw terus kita kirim kesini dan 
+echo "53616c7465645f5f0c160de825c4925b6543fa6c52dc91b4487b8252966d9de6aec8508b95522f879232bf89e3066440" | xxd -r -p > rahasia.des3
