@@ -1,0 +1,7 @@
+dalam soal kali ini saya mendapatkan soal yaitu sebuah file png
+
+ketika saya membuka dengan strings 
+diakhir ada sebuah secret directory 
+jadi menurut saya didalam png ini ada sebuah directory tersembunyi
+oleh karena itu saya unzip dan menemukan secret
+saya lihat didalamnya dan saya menemukan sebuah flag

@@ -1,0 +1,60 @@
+diberikan sebuah file tanpe ekstensi. saat dianalisis menggunakan file 
+hasilnya hanya data
+tidak ada string menarik dan exiftool maupun binwalk juga tidak menujukkan apa apa
+ini mengindikasikan format file rusak, bukan kosong
+challenge menuntut kita memahami bahwa file ini sebenarnya adalah gambar tetapi byte order terbalik (endianness issue)
+
+kita periksa dengan xxd
+xxd -l 32 challengefile
+
+output awal adalah 
+00000000: e0ff d8ff 464a ...
+
+header jpeg yang seharusnya adalah 
+ffd8 ffe0 4a46 4946 ...
+
+terlihat berpasangan seolah terbalik urutannya
+artinya ada masalah endianness
+
+perintah file pun mendeteksi
+file challengefile
+
+hasilnya data
+
+karna header salah
+
+coba perbaiki dengan 2 byte swap (gagal)
+endiannes paling umum adalah 2 bytes (conv=swab)
+dd if=challengefile of=fixed.jpg conv=swab
+
+namun hasil fixed file nya masih data 
+
+melihat pola pada header 
+e0 ff d8 ff
+
+jika dikelompokkan 4 byte dan dibalik
+e0 ff d8 ff   →   ff d8 ff e0
+
+ini adalah header jpeg valid
+jadi kita perlu swap setiap blok 4 byte
+
+kita bisa gunakan script python untuk hal ini 
+
+def swap_chunks(data, size):
+    out = bytearray()
+    for i in range(0, len(data), size):
+        chunk = data[i:i+size]
+        out.extend(chunk[::-1])
+    return bytes(out)
+
+with open("challengefile", "rb") as f:
+    data = f.read()
+
+sw4 = swap_chunks(data, 4)
+
+with open("fixed_4byte.jpg", "wb") as f:
+    f.write(sw4)
+
+print("Done — check fixed_4byte.jpg")
+
+dan dengan ini file nya selesai 

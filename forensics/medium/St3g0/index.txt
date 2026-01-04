@@ -1,0 +1,4 @@
+dalam tugas kali ini kita , ya karena kita sudh mencoba semua , stegano biasa
+binwalk dn lain lain dan masih belum ketemu
+kita lanjutkan stegano lsb
+kita pakai zsteg untuk analisis dan kita menemukan anomalinya atau flagnya

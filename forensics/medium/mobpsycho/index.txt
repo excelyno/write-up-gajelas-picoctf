@@ -1,0 +1,13 @@
+dalam tugas kali ini kita diberi sebuah file apk
+kita hard ceck langsung saja
+
+pertama kita bisa lakukan strings app.apk | grep "pico"
+dan tidak ada hasilnya
+
+berbeda jika kita melakukan dengan 
+strings app.apk | grep "flag"
+
+akan muncul sebuah path dimana flag berada 
+lalu kita unzip terlebih dahulu file apknya 
+lalu kita cat langsung menggunakan path yang sudah didapatkan
+dan kita mendapatkan flagnya

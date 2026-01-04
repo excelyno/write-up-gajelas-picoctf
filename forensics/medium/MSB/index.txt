@@ -1,0 +1,25 @@
+diberikan sebuah file png bernama 
+Ninja-and-Prince-Genji-Ukiyoe-Utagawa-Kunisada.flag.png
+
+
+dan deskripsi menyatakan “This image passes LSB statistical analysis, but there must be something to the visual artifacts present in this image…”
+
+ini mengindikasikan lsb stegano tidak dipakai
+ada visual artifact dan 
+kemungkinan data disembunyikan pada most significant bit
+
+saat gambar dibuka telihat noise noise / blok blok tidak natural 
+ketika di chekc menggunakan tools lsb misalkan zteg dan binwalk
+
+tidak ada data tersembunyi
+
+dan kita membuat sebuah hipotesis bahwa data disimpan pada bit plane yang lebih tinggi yaitu di bit ke 6 atau bit ke 7 bukan lsb
+
+kita baca semua pixel gambar 
+extract bit paling signifikan (msb) dari setiap channel rgb dan susun ulang bi t bit tersebut menjadi 
+
+susun ulang bit bit tersebut menjadi gambar hitam putih dan atau stream byte atau teks asxii
+
+kita gunakan python untuk membuatr script ekstraksi
+
+dan ya jlankan lalu kita bisa mendapatkan flag
