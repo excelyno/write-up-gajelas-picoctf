@@ -1,0 +1,17 @@
+dalam tugas kali ini kita diberi sebuah disk dan sebuah remote ssh
+dari command atau exec ssh yang tertera. kita menyertakan sebuah file untuk masuk kedalam sshnya 
+brarti kita mencari private key dari server itu
+
+kita diberi disk jadi kemungkinan ada di disk juag
+pertama kita melihat mmls dan saya check di partisi pertama juga ga ada hal menarik
+kita lanjut ke partisi kedua yang diawali dari 206848
+
+kita gunakan fls untuk melihat kedalamnya dan karna kita mencari sebuah private key
+yang biasanya itu brawal dari related document ssh jika tidak ada id_ed25519
+
+kita lanjut ekstrak file nya dan kita mendapatkan private key nya
+
+
+lalu masukkan pada file bernama key_file
+dan kita lakukan perintah ssh
+dan woila kita dah didalam servernya
