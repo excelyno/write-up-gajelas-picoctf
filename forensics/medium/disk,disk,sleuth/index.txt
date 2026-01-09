@@ -1,0 +1,11 @@
+dalam soal kali ini kita didapatkan sebuah file boot mbr
+jadi kita analisis saja menggunakan sleuth kit
+pertama kita baca partisi menggunakan mmls
+lalu kita cek partisi salah satu menggunakan fls -o 2048 file.img
+
+dan setelahnya kita bisa mendapatkan list file
+lanjut kita gunakan grep untuk ambil
+dan selanjutnya kita gunakan icat untuk ekstrak keluar 
+dengan icat -o 2048 disk.img <inode> > ke file apa 
+done
+dan kita bisa gunakan perintah grep -oP '\(\s*\K.\s*(?=\))' nama file | tr -d ' \n'
