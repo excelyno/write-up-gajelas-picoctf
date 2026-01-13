@@ -1,0 +1,29 @@
+dalam tugas kali ini, kita diberikan sebauh disk imgae bernama 
+dds1-alpine.flag.img.gz
+
+deskripsi menunjukan bahwa kita diminta menggunakan
+srch_strings dari the sleuth kit serta kemampuan commandline (terminal-fu)
+untuk menemukan sebuah flag yang tersembunti di dalam disk image tersebut
+
+tujuan ini adalah kita melakukan analisis foerensik sederhana terhadap disk image
+
+memahami bahwa flag dapat tersimpan dalam plaintext dan
+kita menggunakan tool forensik yang tepat, bukan brute force atau ekdploitasi
+
+
+kita langsung gunzip terlebih dahulu dan kita memperloeh file 
+
+dds1-alpine.flag.img
+
+kita identifikasi dengan 
+file dds1-alpine.flag.img
+
+kita menemukan bahwa file tersebut adalah DOS/MBR boot sector
+
+dan kita mmls menemukan ada beberapa partisi
+
+kita langsung saja check menggunakan srch_Strings yang disuruh 
+kita langsung grep untuk flag format yaitu pico 
+dan kita menemukannya diakhir output
+
+
