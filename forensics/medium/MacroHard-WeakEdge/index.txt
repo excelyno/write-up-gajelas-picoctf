@@ -1,0 +1,31 @@
+dalam soal kali ini kita mendapatkan sebuah file pptm 
+ketika kita lakukan check file maka muncul sebuah pemberitahuan bahwa ini adalah file ppt dari powerpoint 2007
+dan saya mencari tau terkait model file extensi ini dan saya menemukan bahwa
+file pptm ini pada dahulunya adalah file zip. 
+
+Walaupun file tidak menulis "zip archive", semua PowerPoint 2007+ adalah ZIP.
+
+nah ini adalah indikasi besar kita dapat mengubah tipe filenya. 
+kita ubah menjadi zip dengan mv lalu kita ekstrak
+
+lalu kita akan melihat sebuah hidden
+
+*******
+  inflating: extracted/ppt/theme/theme1.xml
+ extracting: extracted/docProps/thumbnail.jpeg
+  inflating: extracted/ppt/vbaProject.bin
+  inflating: extracted/ppt/presProps.xml
+  inflating: extracted/ppt/viewProps.xml
+  inflating: extracted/ppt/tableStyles.xml
+  inflating: extracted/docProps/core.xml
+  inflating: extracted/docProps/app.xml
+  inflating: extracted/ppt/slideMasters/hidden
+
+
+ada yang mencurigakan yaitu hidden
+kita lanjutkan untuk check file tersebut
+kita akses dengan 
+strings extracted/ppt/slideMasters/hidden
+
+lalu kita menemukan sebuah base64
+kita decode dan kita mendapatkan flagnya
