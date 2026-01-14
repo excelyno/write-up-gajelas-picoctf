@@ -1,0 +1,6 @@
+dalam soal kali ini kita diberi soal yang memberi kiat sebuah docm
+jadi docm bisa disisipi oleh macros
+nah macros ini yang berbahaya karena bisa eksekusi codee
+jadi kita perlu membukanya di office
+dan kita lihat di tab view, macros, view macros dan pilih salah satu macros dan edit, maka muncul sebuah payloadnya 
+
