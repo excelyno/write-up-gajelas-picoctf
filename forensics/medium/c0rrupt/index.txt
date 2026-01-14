@@ -1,0 +1,55 @@
+diberikan sebuah file bernama mystery 
+yang tidak dapat dibuka, tugasnya adalah memperbaiki file tersebut hingga dapat dibaca dan menemkan flag yang tersembunti didalamnya
+
+hint dari soal adalah
+try fixing the file header
+
+jadi awal kita analisis terlebih dahulu filenya itu apa
+dengan file
+dan hasil ini menunjukkan file tidak dikenali dengna benar. ini mengindikasikan header file rusak
+
+selanjutnya dilakukan pemeriksaan struktur png menggunakan pngcheck -v
+output awal menujukkan error 
+termasuk
+chunk name tidak valid
+crc error
+dan invalid chunk length
+
+ini mengarah pada kesumpulan bahwa
+file ini adalah file png yang sengaja dikorupsi pada level struktur chunk
+
+berikut adalah informasi terkait struktur dasar png 
+1. png signature (8 bytes)
+2. chunk berurutan 
+	- IHDR
+	- sRGB / gAMA / pHYs ( opsional )
+	- IDAT (data gambar)
+	- IEND
+
+setiap chunk memiliki format
+[4 byte LENGTH]
+[4 byte TYPE]
+[n byte DATA]
+[4 byte CRC]
+
+jika salah satu bagian rusak, maka tidak bisa dibacalah png itu
+
+kita analisis dengan xxd ikan.png | head
+
+dan kita menemukan ada beberapa kejanggalan yaitu header tidak sesuai , 
+chunkname tidak sesuai standar png 
+nilai lenght tidak masuk akan 
+dan crc tidak cocok
+
+
+perbaikan chunk phys
+jadi kita menemukan lokasi phys, chunk pHYs at offset 0x00042, length 9
+CRC error in chunk pHYs
+
+artinya chunk phys brada setelah gAMA
+crc chunk salah
+
+dilanjutkan memperbaiki crc pHYs.
+crc yang benar dihitung ulang oleh pngcheck
+
+
