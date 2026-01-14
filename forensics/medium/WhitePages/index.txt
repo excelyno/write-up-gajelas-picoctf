@@ -1,0 +1,7 @@
+dalam tugas kali ini. kita bukan diberi file kosong. melainkan ada banyak space yang berbeda
+dan space ini adalah space biasa dengan space em 
+dan memiliki unicode yang berbeda juga
+jadi kita ubah mereka menjadi 0 dan 1
+
+lalu kita dapatkan raw data dan kita send aj lngsung ke cyber chef
+kita mendapatkan flagnya 
